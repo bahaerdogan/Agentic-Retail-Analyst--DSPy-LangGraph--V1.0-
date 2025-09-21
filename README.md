@@ -1,6 +1,6 @@
 Agentic Retail Analyst (DSPy + LangGraph)
 
-Disclaimer: This project is a conceptual prototype. It is not part of my academic or professional work.
+Disclaimer: This project is a conceptual prototype. It is not part of my academic or professional work. This is a initial version updates will follow.
 
 An experimental AI agent for retail analytics that combines retrieval-augmented generation (RAG) with SQL querying over the Northwind database. It showcases DSPy chain-of-thought reasoning orchestrated with LangGraph.
 
