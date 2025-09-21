@@ -158,6 +158,7 @@ secrets/
 # Output files
 outputs/
 *.jsonl
+!sample_questions_hybrid_eval.jsonl
 *.json
 logs/
 *.log
