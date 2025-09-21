@@ -18,13 +18,6 @@ All modules use pure DSPy Chain-of-Thought reasoning with optimized prompt handl
 - Type-safe answer synthesis and format compliance
 - Automatic citation generation from multiple sources
 
-## Code Quality & Performance
-- **Memory Optimization**: Removed unnecessary garbage collection and object deletion
-- **Error Handling**: Robust exception handling with meaningful error messages
-- **Code Deduplication**: Consolidated repeated logic into reusable patterns
-- **Type Safety**: Improved format validation and type conversion
-- **Connection Management**: Efficient database connection handling
-
 ## Trade-offs & Assumptions
 - **CostOfGoods**: Approximated as 70% of UnitPrice when not available
 - **Table Names**: Uses lowercase views (orders, order_items, products, customers) for consistency
