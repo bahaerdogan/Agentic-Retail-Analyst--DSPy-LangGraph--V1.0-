@@ -1,51 +1,68 @@
-# Agentic Retail Analyst (DSPy + LangGraph)
+Agentic Retail Analyst (DSPy + LangGraph)
 
-A local AI agent that answers retail analytics questions by combining RAG over documents and SQL queries on a Northwind database. This is an experimental implementation showcasing DSPy Chain-of-Thought reasoning with LangGraph orchestration.
+Disclaimer: This project is a conceptual prototype. It is not part of my academic or professional work.
 
-## Current Implementation Status
+An experimental AI agent for retail analytics that combines retrieval-augmented generation (RAG) with SQL querying over the Northwind database. It showcases DSPy chain-of-thought reasoning orchestrated with LangGraph.
 
-### ✅ What's Working
-- **Basic Question Routing**: Successfully classifies questions as RAG, SQL, or hybrid queries
-- **Document Retrieval**: TF-IDF based search over markdown documents with chunking
-- **SQL Generation**: Generates working SQL queries for common retail analytics questions
-- **Database Integration**: Connects to SQLite Northwind database with proper error handling
-- **Answer Synthesis**: Combines results from multiple sources with citations
-- **CLI Interface**: Batch processing with configurable models via Ollama
+Current Status
+Working Features
 
-### ⚠️ Known Limitations
-- **Routing Accuracy**: Router sometimes misclassifies complex questions (~70% accuracy)
-- **SQL Complexity**: Struggles with advanced joins and complex aggregations
-- **Error Recovery**: Repair loop works but could be more sophisticated
-- **Performance**: No query optimization or caching implemented yet
-- **Model Dependency**: Heavily dependent on local model quality (tested with Phi-3.5)
+Question Routing: Classifies queries as RAG, SQL, or hybrid
 
-### 🔧 Areas for Improvement
-- Better prompt engineering for routing decisions
-- More robust SQL query validation and repair
-- Enhanced document chunking and retrieval scoring
-- Query result caching and performance optimization
-- Support for more complex analytical queries
+Document Retrieval: TF-IDF search over chunked markdown documents
 
-## Architecture Overview
-- **Router**: DSPy ChainOfThought classifier (rag | sql | hybrid)
-- **Retriever**: TF-IDF document search with scoring
-- **NL2SQL**: DSPy ChainOfThought SQL generation
-- **Executor**: SQLite query execution with error handling
-- **Synthesizer**: DSPy ChainOfThought answer formatting
-- **Repair Loop**: Basic error detection and retry (2 iterations max)
+SQL Generation: Produces functional SQL for common analytics queries
 
-## Trade-offs & Assumptions
-- **CostOfGoods**: Approximated as 70% of UnitPrice when not available
-- **Table Schema**: Uses lowercase table names for consistency
-- **Local Models**: Designed for Ollama/local inference (no API costs)
-- **Experimental**: This is a proof-of-concept, not production-ready
+Database Integration: Connects to SQLite Northwind with error handling
 
-## Roadmap
+Answer Synthesis: Merges results from multiple sources with citations
 
-**Next versions will be available in the following weeks** with improvements to:
-- Enhanced routing accuracy and decision logic
-- Better SQL query generation and validation
-- Improved error handling and recovery mechanisms
-- Performance optimizations and caching
-- More comprehensive test coverage
-- Support for additional data sources and formats
+CLI Interface: Batch processing with configurable Ollama models
+
+Limitations
+
+Routing accuracy ~70% on complex queries
+
+Difficulty handling advanced joins and aggregations
+
+Basic error recovery and repair mechanisms
+
+No caching or query optimization
+
+Strongly dependent on local model quality (tested with Phi-3.5)
+
+Areas for Improvement
+
+Improved prompt engineering for routing
+
+More robust SQL validation and repair
+
+Enhanced document chunking and retrieval scoring
+
+Query caching and performance optimization
+
+Support for more complex analytics
+
+Architecture
+
+Router: DSPy Chain-of-Thought classifier (rag | sql | hybrid)
+
+Retriever: TF-IDF search with scoring
+
+NL2SQL: DSPy SQL generator
+
+Executor: SQLite with error handling
+
+Synthesizer: DSPy answer formatter
+
+Repair Loop: Basic error detection and retries (max 2)
+
+Assumptions & Trade-offs
+
+CostOfGoods estimated as 70% of UnitPrice if missing
+
+Table schema standardized to lowercase
+
+Local models preferred (Ollama, no API costs)
+
+Proof-of-concept only, not production-ready
